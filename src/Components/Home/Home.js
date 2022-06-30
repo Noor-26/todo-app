@@ -1,8 +1,11 @@
 import React from 'react'
+import TodoForm from '../TodoForm/TodoForm'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <TodoForm/>
+    </div>
   )
 }
 
