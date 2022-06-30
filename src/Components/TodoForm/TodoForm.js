@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import TodoTask from '../TodoTask/TodoTask';
@@ -6,7 +6,15 @@ import axios from 'axios'
 function TodoForm() {
     const [user] = useAuthState(auth)
     const [value, setValue] = useState("");
+    const [tasks, setTasks] = useState([]);
 
+    useEffect(() => {
+      if(user?.email){
+        axios(`http://localhost:5000/tasks?email=${user.email}`)
+        .then(data => setTasks(data.data))
+      }
+    }, [user,value,tasks])
+    
     const handleChange = e => {
       setValue(e.target.value);
     };
@@ -17,14 +25,15 @@ function TodoForm() {
         email: user.email,
         taskData : value
      }
-     console.log(task)
      axios.post(`http://localhost:5000/tasks`,task)  
      .then(data => console.log(data))
+     setValue('')
     };
-   
+    
     const handleKeypress = e => {
       if (e.keyCode === 13) {
-       handleSubmit()
+        handleSubmit()
+
       }
     };
   return (
@@ -42,7 +51,7 @@ function TodoForm() {
             </div>
         </div>
         <div>
-            <TodoTask/>
+            {tasks.map(task => <TodoTask task={task}/>)}
         </div>
     </div>
 
@@ -52,10 +61,3 @@ function TodoForm() {
 }
 
 export default TodoForm
-{/* <input type="text" placeholder="Add" class="input input-bordered w-full max-w-xs" 
-value={value}
-      onChange={handleChange}
-      onKeyPress={handleKeypress} />
-<button type='submit'   onClick={handleSubmit} class="btn btn-primary">
- Add task
-</button> */}
