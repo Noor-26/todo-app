@@ -1,7 +1,11 @@
 import React from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import {signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom'
+import auth from '../../firebase.init'
 
 function Navber() {
+  const [user] = useAuthState(auth)
   return (
     <div class="navbar bg-base-100">
   <div class="navbar-start">
@@ -25,7 +29,7 @@ function Navber() {
       <li><Link to='/'>To do</Link></li>
       <li><Link to='/com_task'>Completed Task</Link></li>
       <li><Link to='/calender'>Calender</Link></li>
-      <li><Link to='/login'>Login</Link></li>
+     {user? <button className='btn btn-primary hover:border-primary border-2 hover:bg-transparent hover:text-white' onClick={() =>  signOut(auth)}>Sign Out</button> : <li><Link to='/login'>Login</Link></li>}
     </ul>
   </div>
 
