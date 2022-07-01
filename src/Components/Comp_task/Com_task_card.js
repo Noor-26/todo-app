@@ -8,7 +8,7 @@ function Com_task_card({task,index}) {
 
     const deleteTask = () => {
 
-        fetch(`http://localhost:5000/tasks_complete/${_id}`,{
+        fetch(`https://fast-dawn-02990.herokuapp.com/tasks_complete/${_id}`,{
             method: 'delete',
         })
         .then(res => res.json()) 

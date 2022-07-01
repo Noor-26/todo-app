@@ -7,10 +7,10 @@
     font-family: 'Satisfy', cursive;
 }
 
-.footer{
-position: absolute;
-bottom: 0;
+.todo-container{
+    height: 80vh;
 }
+
 .footer_link{
     font-size: 24px;
 }

@@ -14,7 +14,7 @@ function TodoForm() {
 
   useEffect(() => {
     if (user?.email) {
-      axios(`http://localhost:5000/tasks?email=${user.email}`)
+      axios(`https://fast-dawn-02990.herokuapp.com/tasks?email=${user.email}`)
         .then(data => setTasks(data.data))
     }
   }, [user, value, tasks])
@@ -42,11 +42,11 @@ function TodoForm() {
     }
 
     if (!editData) {
-      axios.post(`http://localhost:5000/tasks`, task)
+      axios.post(`https://fast-dawn-02990.herokuapp.com/tasks`, task)
         .then(data => toast.success('task added'))
     }
     else {
-      axios.patch(`http://localhost:5000/tasks/${editData._id}`, task).then(data => {
+      axios.patch(`https://fast-dawn-02990.herokuapp.com/tasks/${editData._id}`, task).then(data => {
         toast.success('task updated')
         setEditData('')
       })
@@ -61,7 +61,7 @@ function TodoForm() {
   };
   return (
     <div >
-      <div className="h-100  w-full flex items-center justify-center bg-teal-lightest font-sans">
+      <div className="todo-container  w-full flex items-center justify-center bg-teal-lightest font-sans">
         <div className="rounded shadow  p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
           <form className="mb-4">
             <div className="flex mt-4">

@@ -15,8 +15,8 @@ function Navber() {
       </label>
       <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         
-      <li><Link to='/'>To do</Link></li>
-      <li><Link to='/com_task'>Completed Task</Link></li>
+      <li><Link to='/'>To-Do</Link></li>
+      <li><Link to='/com_task'>Completed Tasks</Link></li>
       <li><Link to='/calendar'>Calendar</Link></li>
      {user? <button className='btn btn-primary hover:border-primary border-2 hover:bg-transparent hover:text-white' onClick={() =>  signOut(auth)}>Sign Out</button> : <li><Link to='/login'>Login</Link></li>}
       </ul>
@@ -26,8 +26,8 @@ function Navber() {
   <div className="navbar-end hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
       
-      <li><Link to='/'>To do</Link></li>
-      <li><Link to='/com_task'>Completed Task</Link></li>
+      <li><Link to='/'>To-Do</Link></li>
+      <li><Link to='/com_task'>Completed Tasks</Link></li>
       <li><Link to='/calendar'>Calendar</Link></li>
      {user? <button className='btn btn-primary hover:border-primary border-2 hover:bg-transparent hover:text-white' onClick={() =>  signOut(auth)}>Sign Out</button> : <li><Link to='/login'>Login</Link></li>}
     </ul>

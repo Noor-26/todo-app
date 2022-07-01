@@ -12,7 +12,7 @@ function Comp_task() {
    const email = user?.email
     useEffect(() => {
         if(email){
-            fetch(`http://localhost:5000/tasks_complete?email=${email}`)
+            fetch(`https://fast-dawn-02990.herokuapp.com/tasks_complete?email=${email}`)
             .then(res => res.json())
             .then(data => setTasks(data)) 
         }
@@ -24,7 +24,7 @@ function Comp_task() {
   return (
     <div>
         <h2 className='text-5xl text-center mt-3'>Completed tasks</h2>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto my-5">
   <table className="table w-full">
     <thead>
       <tr>

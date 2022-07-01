@@ -8,10 +8,10 @@ import { toast } from 'react-toastify'
 function TodoTask({task,updateTask}) {
     const {taskData,_id} = task
     const taskComplete = () => {
-        axios.post(`http://localhost:5000/tasks_complete/${_id}`,task) .then(data => toast.success('Task Completed')) 
+        axios.post(`https://fast-dawn-02990.herokuapp.com/tasks_complete/${_id}`,task) .then(data => toast.success('Task Completed')) 
     }   
     const deleteTask = () => {
-        axios.delete(`http://localhost:5000/tasks/${_id}`)
+        axios.delete(`https://fast-dawn-02990.herokuapp.com/tasks/${_id}`)
         .then(data => toast.error('Task Deleted!')) 
     }
     
