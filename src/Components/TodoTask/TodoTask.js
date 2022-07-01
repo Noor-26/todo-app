@@ -8,8 +8,7 @@ import { toast } from 'react-toastify'
 function TodoTask({task}) {
     const {taskData,_id} = task
     const taskComplete = () => {
-        deleteTask()
-        axios.post(`http://localhost:5000/tasks_complete`,task) .then(data => toast.success('Task Completed')) 
+        axios.post(`http://localhost:5000/tasks_complete/${_id}`,task) .then(data => toast.success('Task Completed')) 
     }  
     const deleteTask = (e) => {
         e.preventDefault()
