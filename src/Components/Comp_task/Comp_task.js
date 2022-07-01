@@ -6,10 +6,9 @@ import Loading from '../shared/Loading/Loading'
 import Com_task_card from './Com_task_card'
 import { format } from 'date-fns';
 
-function Comp_task({selected}) {
+function Comp_task() {
     const [user,loading] = useAuthState(auth)
     const [tasks, setTasks] = useState([])
-    const date = format(selected, 'PP')
    const email = user?.email
     useEffect(() => {
         if(email){

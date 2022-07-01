@@ -10,7 +10,6 @@ import Comp_task from './Components/Comp_task/Comp_task';
 import Calendar from './Components/Calendar/Calendar';
 import { useState } from 'react';
 function App() {
-  const [selected, setSelected] = useState()
 
   return (
     <div className="App">
@@ -19,8 +18,8 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/com_task' element={<Comp_task selected={selected}/>}/>
-        <Route path='/calendar' element={<Calendar selected={selected} setSelected={setSelected} />}/>
+        <Route path='/com_task' element={<Comp_task/>}/>
+        <Route path='/calendar' element={<Calendar  />}/>
       </Routes>
       <ToastContainer/>
     </div>
