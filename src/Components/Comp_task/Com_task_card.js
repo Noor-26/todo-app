@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 
 function Com_task_card({task,index}) {
-    const {taskData,_id} = task
+    const {taskData,_id,date} = task
 
     const deleteTask = () => {
 
@@ -12,12 +12,12 @@ function Com_task_card({task,index}) {
             method: 'delete',
         })
         .then(res => res.json()) 
-        .then(data => toast.error('Task Deleted!')) 
+        .then(data => toast.error('Task removed!')) 
     }
   return (
     <tr>
         <th>{index +1 }</th>
-        <td>Cy Ganderton</td>
+        <td>{date}</td>
         <td>{taskData}</td>
         <td> <button className='btn btn-outline btn-primary border-2 btn-sm update_btn' onClick={deleteTask}><RiDeleteBack2Fill/></button></td>
       </tr>

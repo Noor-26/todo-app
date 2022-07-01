@@ -1,10 +1,10 @@
 import React from 'react'
 import TodoForm from '../TodoForm/TodoForm'
 
-function Home() {
+function Home({selected}) {
   return (
     <div>
-      <TodoForm/>
+      <TodoForm selected={selected}/>
     </div>
   )
 }

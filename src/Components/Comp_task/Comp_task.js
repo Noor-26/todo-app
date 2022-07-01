@@ -24,12 +24,12 @@ function Comp_task() {
   return (
     <div>
         <h2 className='text-5xl text-center mt-3'>Completed tasks</h2>
-        <div class="overflow-x-auto">
-  <table class="table w-full">
+        <div className="overflow-x-auto">
+  <table className="table w-full">
     <thead>
       <tr>
         <th></th>
-        <th>Time</th>
+        <th>Added Time</th>
         <th>Task</th>
         <th>Action</th>
       </tr>

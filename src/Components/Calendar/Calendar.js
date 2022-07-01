@@ -3,9 +3,8 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from 'date-fns';
 import './Calendar.css'
-function Calendar() {
-  const [selected, setSelected] = useState()
-
+function Calendar({selected,setSelected}) {
+ 
     let footer ;
     if (selected) {
       footer = <p>You picked {format(selected, 'PP')}.</p>;

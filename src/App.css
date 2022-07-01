@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.logo{
+    font-family: 'Satisfy', cursive;
+}
+
+.footer{
+position: absolute;
+bottom: 0;
+}
+.footer_link{
+    font-size: 24px;
+}
